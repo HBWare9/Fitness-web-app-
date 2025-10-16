@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for
 from flask_sqlalchemy import SQLAlchemy 
+import psycopg2
 import os 
 
 app = Flask(__name__)
@@ -18,11 +19,9 @@ class authTable(db.Model):
 
 if __name__ == "__main__":
     with app.app_context():
-        user = authTable.query.first()
-        if user:
-            print(f"Found user: {user.username}")
-        else:
-            print("No users found in the table.")
+        authTable.__table__.drop(db.engine)
+        print("Dropped users table")
+
 
     
     
