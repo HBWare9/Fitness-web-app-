@@ -1,0 +1,59 @@
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: rgb(169, 200, 66);
+}
+
+.banner h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+}
+
+.formWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.signupForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-style: solid;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 300px;
+    
+}
+
+.signupForm label {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    font-size: 1rem;
+    display: block;
+}
+
+.signupForm input[type="text"], input[type="password"], input[type="confirmpass"] {
+    font-size: 1rem;
+    width: 300px;
+    height: 20px;
+    margin-bottom: 15px;
+}
+
+.signupForm button{
+    gap: 20px;
+    width: 100px;
+    height: 25px;
+    background-color: rgb(169, 200, 66);
+    color: white;
+}

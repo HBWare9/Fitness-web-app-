@@ -1,11 +1,38 @@
 {% extends "base.html" %}
 
 {% block head %} 
-<title> Task master </title>
+<title> HBFit Online </title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/frontpage.css')}}">
 {% endblock %}
 
 {% block body %}
+<div class="topBanner">
+    <h1 id="maintitle"> HBFit Online Fitness App </h1>
+</div>
 
-Welcome to the front page.
+<div class="loginWrapper"> 
+    <div class="login"> 
+        <form method="POST"> 
+            <label for="username"> Username: </label> <br>
+            <input type="text" id="username" name="username"> <br> 
+            <label for="password"> Password: </label> <br>
+            <input type="text" id="password" name="password">
+
+            <div class="buttonRow">
+                <button type="submit" name="action" value="login"> Login </button>
+
+                <a href="{{ url_for('signup') }}">
+                <button type="button"> Signup </button>
+                </a>
+            </div>
+        </form>
+        
+        {% if error %}
+            <div class="error"> {{ error }}</div>
+        {% endif %}
+    </div>
+
+</div>
+
 
 {% endblock %}
