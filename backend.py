@@ -19,8 +19,7 @@ class authTable(db.Model):
 
 if __name__ == "__main__":
     with app.app_context():
-        authTable.__table__.drop(db.engine)
-        print("Dropped users table")
+        db.create_all()
 
 
     
