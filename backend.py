@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy 
 import psycopg2
 import os 
@@ -15,11 +15,13 @@ class authTable(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String)
     password = db.Column(db.String)
-    
+
+@app.route('/')
+def homePage():
+    return render_template('frontpage.html')
 
 if __name__ == "__main__":
-    with app.app_context():
-        db.create_all()
+    app.run(debug=True)
 
 
     
