@@ -38,13 +38,34 @@
 .options {
     display: flex;
     flex-direction: column;
+    gap: 20px;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     border-style: solid;
     background-color: white;
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     width: 100%;
-    max-width: 300px;
+    max-width: 250px;
+}
+
+.btn {
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 40px;
+  background-color: rgb(169, 200, 66); 
+  color: white;
+  text-decoration: none; 
+  border: solid;
+  border-color: black;
+}
+
+.welcome {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 15px;
+    font-weight: bold;
 }

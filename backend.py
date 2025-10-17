@@ -33,7 +33,7 @@ def login():
                 session['uid'] = row[0]
                 session['username'] = row[1]
                 print(f"Login success with id {session.get('uid','0')}")
-                return render_template('homepage.html', username=session.get('username', 'Guest'))
+                return redirect(url_for('homepage'))
             else: 
                 return render_template('frontpage.html', error="Invalid login details, please try again")
 
@@ -59,6 +59,22 @@ def signup():
             return redirect('/')
     else:
         return render_template("signup.html")
+    
+@app.route('/homepage', methods=['GET', 'POST'])
+def homepage():
+    return render_template("homepage.html", username=session.get('username', 'Guest'))
+
+@app.route('/create')
+def createWorkout():
+    return render_template("create.html")
+
+@app.route('/workout')
+def performWorkout():
+    return render_template("perform.html")
+
+@app.route('/edit')
+def editWorkout():
+    return render_template("edit.html")
 
 
 if __name__ == "__main__":

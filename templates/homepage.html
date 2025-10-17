@@ -15,9 +15,9 @@
 <div class="buttonWrapper"> 
     <div class="welcome"> Welcome {{ username }}</div>
     <div class="options"> 
-        <a href=""> Create new workout </a>
-        <a href=""> Begin a workout </a>
-        <a href=""> Edit workouts </a>
+        <a href="{{ url_for('createWorkout') }}" class="btn"> Create workout </a>
+        <a href="{{ url_for('performWorkout') }}" class="btn"> Begin a workout </a>
+        <a href="{{ url_for('editWorkout') }}" class="btn"> Edit workouts </a>
     </div>
 </div>
 
