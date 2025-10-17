@@ -1,10 +1,25 @@
 {% extends "base.html" %}
 
 {% block head %}
+<title> HBFit Home Page </title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css')}}">
 {% endblock %}
 
 {% block body %}
 
-Welcome to the home page. 
+<div class="banner">
+    <h1> Home Page </h1>
+    <a href="{{ url_for('login') }}"> Sign Out </a>
+</div>
+
+<div class="buttonWrapper"> 
+    <div class="welcome"> Welcome {{ username }}</div>
+    <div class="options"> 
+        <a href=""> Create new workout </a>
+        <a href=""> Begin a workout </a>
+        <a href=""> Edit workouts </a>
+    </div>
+</div>
 
 {% endblock %}
+

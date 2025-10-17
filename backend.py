@@ -25,18 +25,21 @@ def login():
         username = request.form['username']
         password = request.form['password']
         
-        query = text("SELECT id FROM auth WHERE username = :username AND password = :password")
+        query = text("SELECT id, username FROM auth WHERE username = :username AND password = :password")
         with db.engine.connect() as dbconn:
             result = dbconn.execute(query, {"username": username, "password": password})
             row = result.fetchone()
             if row is not None: 
                 session['uid'] = row[0]
+                session['username'] = row[1]
                 print(f"Login success with id {session.get('uid','0')}")
-                return render_template('homepage.html')
+                return render_template('homepage.html', username=session.get('username', 'Guest'))
             else: 
                 return render_template('frontpage.html', error="Invalid login details, please try again")
 
-    return render_template('frontpage.html')
+    session.pop('uid', None)
+    session.pop('username', None)
+    return render_template('frontpage.html') 
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():

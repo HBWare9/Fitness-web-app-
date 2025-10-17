@@ -1,0 +1,50 @@
+.banner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    min-height: 75px;
+    background-color: rgb(169, 200, 66);
+}
+
+.banner h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    margin: 0;
+    text-align: center;
+}
+
+.banner a{
+    position: absolute;
+    right: 40px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.buttonWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-style: solid;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 300px;
+}
